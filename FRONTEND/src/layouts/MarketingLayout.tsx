@@ -13,9 +13,14 @@ export default function MarketingLayout() {
             <a href="#features" className="hover:text-[var(--color-text)]">Features</a>
             <a href="#workflow" className="hover:text-[var(--color-text)]">Workflow</a>
           </nav>
-          <Link to="/setup">
-            <Button size="sm">Start hackathon</Button>
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link to="/login">
+              <Button size="sm" variant="ghost">Sign in</Button>
+            </Link>
+            <Link to="/setup">
+              <Button size="sm">Start hackathon</Button>
+            </Link>
+          </div>
         </div>
       </header>
       <Outlet />

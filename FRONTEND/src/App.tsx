@@ -5,6 +5,7 @@ import OnboardingLayout from '@/layouts/OnboardingLayout';
 import WorkspaceLayout from '@/layouts/WorkspaceLayout';
 
 import LandingPage from '@/pages/LandingPage';
+import LoginPage from '@/pages/LoginPage';
 import HackathonSetupPage from '@/pages/HackathonSetupPage';
 import AnalysisDashboardPage from '@/pages/AnalysisDashboardPage';
 import ProjectIdeasPage from '@/pages/ProjectIdeasPage';
@@ -26,6 +27,8 @@ export default function App() {
         {/* Marketing */}
         <Route element={<MarketingLayout />}>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<LoginPage />} />
         </Route>
 
         {/* Linear onboarding: setup -> analysis -> ideas */}
