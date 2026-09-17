@@ -1,3 +1,4 @@
+# init
 """
 main.py — Prompt Writer AI service.
 
