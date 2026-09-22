@@ -126,6 +126,7 @@ def recommend_model(task_description: str, priority: Priority = "quality") -> di
         scored.append((score, model))
 
     if not scored:
+        # No capability overlap at all — pick cheapest model rather than crashing
         fallback = min(MODEL_CAPABILITIES, key=lambda m: m.relative_cost)
         return {
             "task_type": task_type,
