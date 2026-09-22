@@ -30,6 +30,7 @@ export function useAsync<T>(fn: () => Promise<T>, deps: unknown[] = []) {
 
   useEffect(() => run(), [run]);
 
+  // Bumping nonce invalidates the useCallback memo, re-triggering the useEffect
   const retry = useCallback(() => setNonce((n) => n + 1), []);
 
   return { data, status, error, retry, isLoading: status === 'loading', isError: status === 'error' };
