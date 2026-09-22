@@ -40,6 +40,7 @@ export function simulate<T>(data: T, opts: SimulateOptions = {}): Promise<T> {
   });
 }
 
+// Distributes stage label updates evenly across totalMs — keeps the UI feeling alive during long AI calls
 /** Small helper for staged "progress" messages during longer AI operations. */
 export function onStage(stages: string[], setStage: (s: string) => void, totalMs: number) {
   const stepMs = totalMs / stages.length;
