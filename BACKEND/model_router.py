@@ -109,7 +109,7 @@ def recommend_model(task_description: str, priority: Priority = "quality") -> di
     # only matches on "general" shouldn't score the same as one matching on
     # a specific capability like "writing" or "code". Weight it down.
     def match_weight(tag: str) -> float:
-        return 0.3 if tag == "general" else 1.0
+        return 0.3 if tag == "general" else 1.0  # "general" is a weak signal; specific tags count 3× more
 
     scored = []
     for model in MODEL_CAPABILITIES:
