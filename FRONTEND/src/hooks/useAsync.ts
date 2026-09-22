@@ -8,7 +8,7 @@ export function useAsync<T>(fn: () => Promise<T>, deps: unknown[] = []) {
   const [nonce, setNonce] = useState(0);
 
   const run = useCallback(() => {
-    let cancelled = false;
+    let cancelled = false; // prevents state updates on unmounted or re-triggered components
     setStatus('loading');
     setError(null);
     fn()
