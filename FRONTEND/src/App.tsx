@@ -54,6 +54,7 @@ export default function App() {
           <Route path="judge" element={<JudgeSimulatorPage />} />
         </Route>
 
+        {/* Catch-all: unknown routes redirect to landing rather than rendering a blank page */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
