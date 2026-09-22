@@ -44,6 +44,7 @@ class PromptWriterResponse(BaseModel):
 
 @app.post("/api/prompt-writer", response_model=PromptWriterResponse)
 def write_prompt(req: PromptWriterRequest) -> PromptWriterResponse:
+    # strip() catches whitespace-only strings that Pydantic min_length would miss
     if not req.task_description.strip():
         raise HTTPException(status_code=400, detail="task_description is required")
 
