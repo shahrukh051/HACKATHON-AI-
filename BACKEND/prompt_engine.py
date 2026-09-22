@@ -33,6 +33,7 @@ reasonable assumption and label it clearly as an assumption rather than \
 leaving the section blank."""
 
 
+# Provider call isolated here — swap model or client without touching generate_optimized_prompt
 def _call_llm(task_description: str, context: str | None, constraints: str | None) -> str:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
