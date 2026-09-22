@@ -30,6 +30,7 @@ class PromptWriterRequest(BaseModel):
     task_description: str
     context: str | None = None
     constraints: str | None = None
+    # defaults to "quality" so cold-start usage never needs to think about tradeoffs
     priority: Literal["quality", "cost", "speed"] = "quality"
 
 
